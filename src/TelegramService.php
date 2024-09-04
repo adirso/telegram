@@ -12,7 +12,7 @@ class TelegramService
     /**
      * Telegram base URL
      */
-    const string BASE_URL = "https://api.telegram.org";
+    const BASE_URL = "https://api.telegram.org";
 
     /**
      * Telegram API client
