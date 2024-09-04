@@ -19,4 +19,4 @@ This package provides a simple API client for interacting with the Telegram Bot 
 Install the package via Composer:
 
 ```bash
-composer require adirsolomon/telegram
+composer require adirso/telegram
