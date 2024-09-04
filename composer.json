@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Adirsolomon\\Telegram\\": "src/"
+            "Adirso\\Telegram\\": "src/"
         }
     },
     "license": "MIT",

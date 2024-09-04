@@ -1,6 +1,6 @@
 <?php
 
-namespace Adirsolomon\Telegram;
+namespace Adirso\Telegram;
 
 abstract class Reply
 {

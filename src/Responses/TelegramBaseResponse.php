@@ -1,8 +1,8 @@
 <?php
 
-namespace Adirsolomon\Telegram\Responses;
+namespace Adirso\Telegram\Responses;
 
-use Adirsolomon\Telegram\Exceptions\ResponseParsingFailedException;
+use Adirso\Telegram\Exceptions\ResponseParsingFailedException;
 
 class TelegramBaseResponse
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Adirsolomon\Telegram;
+namespace Adirso\Telegram;
 
 readonly class Scope
 {

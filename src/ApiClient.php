@@ -1,25 +1,30 @@
 <?php
 
-namespace Adirsolomon\Telegram;
+namespace Adirso\Telegram;
 
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\GuzzleException;
-use Adirsolomon\Telegram\Responses\GetChatResponse;
-use Adirsolomon\Telegram\Responses\TelegramBaseResponse;
-use Adirsolomon\Telegram\Exceptions\TooManyRequestsException;
-use Adirsolomon\Telegram\Exceptions\BotBlockedByUserException;
+use Adirso\Telegram\Responses\GetChatResponse;
+use Adirso\Telegram\Responses\TelegramBaseResponse;
+use Adirso\Telegram\Exceptions\TooManyRequestsException;
+use Adirso\Telegram\Exceptions\BotBlockedByUserException;
 
 readonly class ApiClient
 {
+    /**
+     * @var Client
+     */
+    private Client $client;
+
     /**
      * @param string $baseUrl
      * @param Client $client
      * @param string $botToken
      */
-    public function __construct(private string $baseUrl, private Client $client, private string $botToken)
+    public function __construct(private string $baseUrl, private string $botToken)
     {
-
+        $this->client = new Client();
     }
 
     /**
@@ -337,6 +342,8 @@ readonly class ApiClient
      * @return ResponseInterface
      * @throws GuzzleException
      * @throws \Exception
+     * @throws BotBlockedByUserException
+     * @throws TooManyRequestsException
      */
     private function request(string $method, string $endpoint, array $options = []): ResponseInterface
     {

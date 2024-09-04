@@ -1,6 +1,6 @@
 <?php
 
-namespace Adirsolomon\Telegram\Responses;
+namespace Adirso\Telegram\Responses;
 
 class GetChatResponse extends TelegramBaseResponse
 {

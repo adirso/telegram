@@ -1,6 +1,6 @@
 <?php
 
-namespace Adirsolomon\Telegram\Exceptions;
+namespace Adirso\Telegram\Exceptions;
 
 class TooManyRequestsException extends TelegramException
 {
