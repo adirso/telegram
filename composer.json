@@ -1,5 +1,5 @@
 {
-    "name": "adirsolomon/telegram",
+    "name": "adirso/telegram",
     "description": "This package allows you to communicate with Telegram using PHP.",
     "type": "library",
     "require": {
