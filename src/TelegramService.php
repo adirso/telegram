@@ -2,6 +2,7 @@
 
 namespace Adirso\Telegram;
 
+use Adirso\Telegram\Messages\BaseMessage;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Adirso\Telegram\Responses\GetChatResponse;
@@ -31,6 +32,16 @@ class TelegramService
             $baseUrl ?? self::BASE_URL,
             $token
         );
+    }
+
+    /**
+     * @param string $chatId
+     * @param BaseMessage $message
+     * @return void
+     */
+    public function send(string $chatId, BaseMessage $message): void
+    {
+
     }
 
     /**
