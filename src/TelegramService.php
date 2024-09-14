@@ -192,11 +192,12 @@ class TelegramService
     }
 
     /**
+     * @param int $offset
      * @return array
      * @throws GuzzleException
      */
-    public function getUpdates(): array
+    public function getUpdates(int $offset = 0): array
     {
-        return $this->client->getUpdates()->getUpdates();
+        return $this->client->getUpdates($offset)->getUpdates();
     }
 }

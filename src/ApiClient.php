@@ -315,13 +315,18 @@ readonly class ApiClient
     }
 
     /**
+     * @param int $offset
      * @return GetUpdatesResponse
      * @throws GuzzleException
      */
-    public function getUpdates(): GetUpdatesResponse
+    public function getUpdates(int $offset = 0): GetUpdatesResponse
     {
         $endpoint = sprintf("/bot%s/getUpdates", $this->botToken);
-        return GetUpdatesResponse::fromGuzzle($this->request("GET", $endpoint, [])->getBody());
+        return GetUpdatesResponse::fromGuzzle($this->request("GET", $endpoint, [
+            "query" => [
+                "offset" => $offset,
+            ]
+        ])->getBody());
     }
 
     /**
