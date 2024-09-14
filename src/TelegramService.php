@@ -193,6 +193,7 @@ class TelegramService
 
     /**
      * @return array
+     * @throws GuzzleException
      */
     public function getUpdates(): array
     {
