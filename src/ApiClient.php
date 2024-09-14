@@ -2,6 +2,7 @@
 
 namespace Adirso\Telegram;
 
+use Adirso\Telegram\Responses\GetUpdatesResponse;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\GuzzleException;
@@ -311,6 +312,16 @@ readonly class ApiClient
                     ]),
                 ]
             ])->getBody());
+    }
+
+    /**
+     * @return GetUpdatesResponse
+     * @throws GuzzleException
+     */
+    public function getUpdates(): GetUpdatesResponse
+    {
+        $endpoint = sprintf("/bot%s/getUpdates", $this->botToken);
+        return GetUpdatesResponse::fromGuzzle($this->request("GET", $endpoint, [])->getBody());
     }
 
     /**

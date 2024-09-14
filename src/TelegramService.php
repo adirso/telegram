@@ -190,4 +190,12 @@ class TelegramService
     {
         return $this->client->sendDocument($chatId, $document, $caption, $protectContent, $keyboard);
     }
+
+    /**
+     * @return array
+     */
+    public function getUpdates(): array
+    {
+        return $this->client->getUpdates()->getUpdates();
+    }
 }
